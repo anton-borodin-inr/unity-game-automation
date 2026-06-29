@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject gameplayPanel;
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private TMP_Text livesText;
+    [SerializeField] private GameObject player;
 
     private int score;
     private int lives;
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
 
         mainMenuPanel.SetActive(false);
         gameplayPanel.SetActive(true);
+        player.SetActive(true);
 
         UpdateGameplayUi();
     }
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour
 
         mainMenuPanel.SetActive(true);
         gameplayPanel.SetActive(false);
+        player.SetActive(false);
 
         UpdateGameplayUi();
     }
