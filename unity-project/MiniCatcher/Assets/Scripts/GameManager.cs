@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private GameObject gameplayPanel;
     [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject pauseMenuPanel;
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private TMP_Text livesText;
     [SerializeField] private TMP_Text finalScoreText;
@@ -25,9 +26,12 @@ public class GameManager : MonoBehaviour
         score = 0;
         lives = 3;
 
+        Time.timeScale = 1f;
+
         mainMenuPanel.SetActive(false);
         gameplayPanel.SetActive(true);
         gameOverPanel.SetActive(false);
+        pauseMenuPanel.SetActive(false);
         player.SetActive(true);
         fallingObject.SetActive(true);
 
@@ -37,6 +41,18 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         StartGame();
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+        pauseMenuPanel.SetActive(true);
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+        pauseMenuPanel.SetActive(false);
     }
 
     public void AddScore()
@@ -69,9 +85,12 @@ public class GameManager : MonoBehaviour
         score = 0;
         lives = 3;
 
+        Time.timeScale = 1f;
+
         mainMenuPanel.SetActive(true);
         gameplayPanel.SetActive(false);
         gameOverPanel.SetActive(false);
+        pauseMenuPanel.SetActive(false);
         player.SetActive(false);
         fallingObject.SetActive(false);
 
@@ -80,9 +99,12 @@ public class GameManager : MonoBehaviour
 
     private void ShowGameOver()
     {
+        Time.timeScale = 1f;
+
         mainMenuPanel.SetActive(false);
         gameplayPanel.SetActive(false);
         gameOverPanel.SetActive(true);
+        pauseMenuPanel.SetActive(false);
         player.SetActive(false);
         fallingObject.SetActive(false);
 
