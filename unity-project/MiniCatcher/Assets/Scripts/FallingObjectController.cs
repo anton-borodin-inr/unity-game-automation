@@ -29,7 +29,12 @@ public class FallingObjectController : MonoBehaviour
 
         if (nextPosition.y < bottomY)
         {
-            ResetPosition();
+            bool gameContinues = gameManager.LoseLife();
+
+            if (gameContinues)
+            {
+                ResetPosition();
+            }
         }
     }
 
