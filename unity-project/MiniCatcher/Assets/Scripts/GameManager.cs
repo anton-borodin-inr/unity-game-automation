@@ -31,6 +31,12 @@ public class GameManager : MonoBehaviour
         UpdateGameplayUi();
     }
 
+    public void AddScore()
+    {
+        score++;
+        UpdateGameplayUi();
+    }
+
     private void ShowMainMenu()
     {
         score = 0;
