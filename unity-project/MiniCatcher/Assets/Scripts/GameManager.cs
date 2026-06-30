@@ -34,6 +34,11 @@ public class GameManager : MonoBehaviour
         UpdateGameplayUi();
     }
 
+    public void RestartGame()
+    {
+        StartGame();
+    }
+
     public void AddScore()
     {
         score++;
