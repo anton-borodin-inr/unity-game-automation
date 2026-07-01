@@ -23,11 +23,16 @@
 *.sln
 *.user
 *.userprefs
+*.slnx
 
 # Python environment
 .venv/
 __pycache__/
 *.pyc
+
+# Python
+.pytest_cache/
+venv/
 
 # macOS
 .DS_Store
