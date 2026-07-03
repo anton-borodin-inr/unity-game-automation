@@ -16,6 +16,11 @@
 *.opendb
 *.VC.db
 
+# AltTester local editor state
+/unity-project/MiniCatcher/Assets/Plugins.meta
+/unity-project/MiniCatcher/Assets/Plugins/AltTester.meta
+/unity-project/MiniCatcher/Assets/Plugins/AltTester/
+
 # IDE
 .idea/
 .vscode/
